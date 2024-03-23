@@ -13,7 +13,7 @@ arboressance du projet /
 |                     ...
 
 
-Pour copier le dossier sur votre ordi 'git clone https://github.com/BeeNooZee/Projet-_Next-GES.git'
+Pour copier le dossier sur votre ordi 'git clone https://github.com/BeeNooZee/Projet-Delobelle.git'
 
 Pour récupérer la derniere version du dev 'git pull' (a faire a chaque fois que vous commencé a dev)
 
