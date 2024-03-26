@@ -79,14 +79,16 @@ footer .foot {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     border-top: 1px solid rgba(128, 128, 128, 0.1);
+    background-color: white;
 }
 
 footer .foot .titrefoot h2 {
-    color: #dcb253;;
+    color: #dcb253;
+    font-family: "Cinzel Decorative", serif;
 }
 
 footer .foot .redirectfoot {
@@ -99,4 +101,49 @@ footer .foot .redirectfoot {
 footer .foot .redirectfoot a {
     margin-right: 20px;
     margin-left: 20px;
+    font-family: "Cinzel Decorative", serif;
+}
+
+
+/*                                        _____         _______   _ _ 
+                                        |  __ \       |__   __| (_) |
+                                        | |__) |__  _ __ | | ___ _| |
+                                        |  ___/ _ \| '_ \| |/ _ \ | |
+    fin de la template fait par :       | |  | (_) | |_) | |  __/ | |
+                                        |_|   \___/| .__/|_|\___|_|_|
+                                                | |               
+                                                |_|               
+
+*/
+
+
+
+.categorie {
+    display: flex;
+    flex-direction: row;
+}
+
+.categorie  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.categorie  img {
+width: 85%;
+height: 85%;
+border-radius: 15px;
+}
+
+.categorie  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cinzel Decorative", serif;
+    }
+
+.categorie .catm img {
+    width: 70%;
+    height: 70%;
 }
