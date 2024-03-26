@@ -8,12 +8,14 @@ a {
     color: inherit;
 }
 
+/* Ceci est la partie pour la navbar */
+
 nav .navbar {
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 5px;
-
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
 
 nav .navbar .navg {
@@ -44,19 +46,57 @@ nav .navbar .navm .or p {
     color: #dcb253;
 }
 
+nav .navbar .navm .or p:hover {
+    color: black;
+}
+
 nav .navbar .navd {
     align-items: center;
     display: flex;
-    justify-content: flex-end; /* Changement pour aligner à droite */
+    justify-content: flex-end;
     flex: 1;
 }
 nav .navbar .navd a {
     margin-left: auto;
-    order: 1; /* Assure que l'élément reste à droite */
+    margin-right: 50px;
+    order: 1;
+    float: right;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
 }
 
 
 nav .navbar .navd img {
     height: 5%;
     width: 5%;
+}
+
+/* C'est la partie pour le footer */
+
+footer .foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+footer .foot .titrefoot h2 {
+    color: #dcb253;;
+}
+
+footer .foot .redirectfoot {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+
+footer .foot .redirectfoot a {
+    margin-right: 20px;
+    margin-left: 20px;
 }
