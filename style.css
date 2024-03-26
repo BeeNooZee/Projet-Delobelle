@@ -3,11 +3,17 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 nav .navbar {
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 5px;
+
 }
 
 nav .navbar .navg {
@@ -31,11 +37,26 @@ nav .navbar .navm p {
     margin-right: 30px;
     font-family: "Cinzel Decorative", serif;
     font-size: 25px;
+    font-weight: bold;
+}
+
+nav .navbar .navm .or p {
+    color: #dcb253;
 }
 
 nav .navbar .navd {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Changement pour aligner à droite */
     flex: 1;
+}
+nav .navbar .navd a {
+    margin-left: auto;
+    order: 1; /* Assure que l'élément reste à droite */
+}
+
+
+nav .navbar .navd img {
+    height: 5%;
+    width: 5%;
 }
