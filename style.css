@@ -280,3 +280,27 @@ border-radius: 15px;
     cursor: pointer;
     text-transform: uppercase;
 }
+/* La partie contact commence ici */
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact .img-contact {
+    flex: 1;
+}
+
+.contact .contact-info {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.contact .contact-info .contact-mail {
+    margin-bottom: 20px;
+}
+
+.contact .contact-info p {
+    font-size: 1.2em;
+}
