@@ -114,3 +114,68 @@ border-radius: 15px;
     width: 70%;
     height: 70%;
 }
+
+
+/* Catégorie sport */
+
+.grande-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_haute {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box_basse {
+    display: flex;
+    justify-content: center;
+}
+
+.grande-box img {
+    width: 70%;
+    border-radius: 15px;
+}
+
+.box-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 50%;
+}
+
+.box-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 50%;
+}
+
+.box-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 50%;
+}
+
+.box-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 50%;
+}
+
+.grande-box .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
