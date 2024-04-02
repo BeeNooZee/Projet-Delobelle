@@ -179,3 +179,40 @@ border-radius: 15px;
     justify-content: center;
     align-items: center;
 }
+
+.prix-1 {
+    font-style: oblique;
+    font-size: 20px;
+    position: absolute;
+    border: 2px solid #dcb253;
+    padding: 5px;
+    top: 54%;
+    margin-left: 65px;
+}
+.prix-2 {
+    font-style: oblique;
+    font-size: 20px;
+    position: absolute;
+    border: 2px solid #dcb253;
+    padding: 5px;
+    top: 54%;
+    margin-left: 65px;
+}
+.prix-3 {
+    font-style: oblique;
+    font-size: 20px;
+    position: absolute;
+    border: 2px solid #dcb253;
+    padding: 5px;
+    top: 95%;
+    margin-left: 65px;
+}
+.prix-4 {
+    font-style: oblique;
+    font-size: 20px;
+    position: absolute;
+    border: 2px solid #dcb253;
+    padding: 5px;
+    top: 95%;
+    margin-left: 65px;
+}
