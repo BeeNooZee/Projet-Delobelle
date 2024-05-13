@@ -1,29 +1,32 @@
 <?php
-include('config/db.php');
+global $connexion;
+include('db.php');
 
-// Récupérer les données du formulaire
-$Nom = $_POST['nom'];
-$Email = $_POST['email'];
-$MotDePasse = $_POST['mot_de_passe'];
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-// Connexion à la base de données
-$connexion = new mysqli( $Nom, $MotDePasse, $Email);
+$sql_check = "SELECT * FROM Users WHERE Username = ? OR Email = ?";
+$stmt_check = $connexion->prepare($sql_check);
+$stmt_check->bind_param("ss", $username, $email);
+$stmt_check->execute();
+$result = $stmt_check->get_result();
 
-// Vérifier la connexion
-if ($connexion->connect_error) {
-    die("La connexion a échoué : " . $connexion->connect_error);
-}
-
-// Requête SQL pour insérer les données dans la table "Clients"
-$sql = "INSERT INTO Clients (Nom, Email, MotDePasse) VALUES ('$Nom', '$Email', '$MotDePasse')";
-
-// Exécuter la requête SQL
-if ($connexion->query($sql) === TRUE) {
-    echo "Nouveau compte créé avec succès";
+if ($result->num_rows > 0) {
+    echo "Username or email already exists.";
 } else {
-    echo "Erreur lors de la création du compte : " . $connexion->error;
+    $sql = "INSERT INTO Users (Username, Email, Password) VALUES (?, ?, ?)";
+    $stmt = $connexion->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $password);
+
+    if ($stmt->execute()) {
+        echo "New account created successfully";
+    } else {
+        echo "Error creating account: " . $stmt->error;
+    }
+    $stmt->close();
 }
 
-// Fermer la connexion à la base de données
+$stmt_check->close();
 $connexion->close();
 ?>
