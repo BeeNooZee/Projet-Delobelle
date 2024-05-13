@@ -1233,3 +1233,55 @@ footer a:hover {
         padding-top: 30px;
     }
 }
+
+
+
+/*Inscription - Connexion */
+
+.insform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insform h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.insform form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #ffffff;
+    border-color: #1a1a1a;
+
+}
+
+.insform label {
+    margin-bottom: 8px;
+}
+
+.insform input[type="text"],
+.insform input[type="email"],
+.insform input[type="password"] {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.insform input[type="submit"] {
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+.insform input[type="submit"]:hover{
+    background-color: #45a049; }

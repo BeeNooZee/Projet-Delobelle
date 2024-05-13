@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+$cart = $_SESSION['add_cart'];
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,19 +27,19 @@
 <body>
 
     <section id="header">
-        <a href="index.html"><img src="img/logo montre marine.png" class="logo" alt=""></a>
+        <a href="index.php"><img src="img/logo_montre_maline.png" class="logo" alt=""></a>
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="shop.html">Boutique</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="signin.html">Sign in/up</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="shop.php">Boutique</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="sign.php">Sign in/up</a></li>
                 <li id="lg-bag"><a href="#" class="active"><i class="far fa-shopping-bag"></i></a></li>
                 <a id="close" href="#"><i class="far fa-times"></i></a>
             </ul>
         </div>
         <div id="mobile">
-            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <a href="cart.php"><i class="far fa-shopping-bag"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
 
         </div>
@@ -51,16 +63,20 @@
                     <td>Sous-total</td>
                 </tr>
             </thead>
-
             <tbody>
+            <?php foreach ($_SESSION['add_cart'] as $item) : ?>
                 <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="img/products/montre-sport-homme.jpg" alt=""></td>
-                    <td>Scortcher Watch</td>
-                    <td>500€</td>
-                    <td><input type="number" value="1" name="" id=""></td>
-                    <td>500€</td>
+                    <td><a href="#">Supprimer</a></td>
+                    <td><img src="<?php echo isset($item[3]) ? $item[3] : ''; ?>" alt=""></td>
+                    <td><?php echo isset($item[1]) ? $item[1] : ''; ?></td>
+                    <td><?php echo isset($item[2]) ? $item[2] . '€' : ''; ?></td>
+                    <td><?php echo isset($item[4]) ? $item[4] : ''; ?></td>
+                    <td><?php echo isset($item[2]) && isset($item[4]) ? $item[2] * $item[4] . '€' : ''; ?></td>
                 </tr>
+            <?php endforeach; ?>
+
+
+
             </tbody>
         </table>
     </section>
@@ -98,11 +114,11 @@
     <footer class="section-p1">
         <div class="col">
             <div class="logo">
-                <img class="logo" src="img/logo montre marine.png" alt="">
+                <img class="logo" src="img/logo_montre_maline.png" alt="">
             </div>
             <h4>Contact</h4>
-            <p><strong>Adresse : </strong> 562 Wellington Road, Rue 32, San Francisco</p>
-            <p><strong>Téléphone :</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+            <p><strong>Adresse : </strong>684 Av. du Club Hippique, 13090 Aix-en-Provence</p>
+            <p><strong>Téléphone :</strong>04 42 95 18 65</p>
             <p><strong>Heures :</strong> 10:00 - 18:00, Lun - Sam</p>
             <div class="follow">
                 <h4>Suivez-nous</h4>
@@ -136,7 +152,7 @@
 
         <div class="col">
             
-            <h4>Passerelles de paiement sécurisées</h4>
+            <h4>Paiement sécurisés</h4>
             <img src="img/pay/pay.png" alt="">
         </div>
 
@@ -145,16 +161,5 @@
         </div>
     </footer>
 
-
-    <script src="script.js"></script>
-</body>
-
 </html>
 
-
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
