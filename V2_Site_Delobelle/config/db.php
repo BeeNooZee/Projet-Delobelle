@@ -1,8 +1,8 @@
 <?php
-$serveur = "192.168.1.42";
+$serveur = "localhost";
 $utilisateur = "root";
-$mot_de_passe = "19012004";
-$base_de_donnees = "Louis";
+$mot_de_passe = "";
+$base_de_donnees = "Site";
 
 $connexion = new mysqli($serveur, $utilisateur, $mot_de_passe, $base_de_donnees);
 
