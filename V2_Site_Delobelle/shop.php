@@ -91,6 +91,30 @@ function ajout($ligne)
         <!-- Les autres produits -->
     </div>
 </section>
+<section id="product1" class="section-p1">
+    <div class="pro-container">
+        <?php foreach ($articles as $article): ?>
+            <div class="pro" onclick="window.location.href='sproduct2.php';">
+                <form method="post" action="shop.php">
+                    <img src="<?php echo $article['image']; ?>" alt="">
+                    <div class="des">
+                        <span>Sport Homme</span>
+                        <h5><?php echo $article['nom']; ?></h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 style="border: none; background: none; padding: 0; margin: 0;"><?php echo $article['prix']; ?>€</h4>
+                    </div>
+                    <a href="" <?php ajout($article['id']) ?>><i class="fal fa-shopping-cart cart"></i></a>
+                </form>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
 
 <footer class="section-p1">
     <!-- Footer -->
