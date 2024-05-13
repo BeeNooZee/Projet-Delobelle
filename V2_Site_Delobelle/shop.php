@@ -11,18 +11,6 @@ $articles = [
 
 $add = 1;
 
-// Fonction pour ajouter un article au panier
-function ajout($ligne)
-{
-    global $add;
-    $cart =& $_SESSION['add_cart']; // Utiliser une référence pour modifier le panier
-    if (isset($cart[$ligne][4])) {
-        $cart[$ligne][4] += $add;
-    } else {
-        $cart[$ligne][4] = $add;
-    }
-}
-
 ?>
 
 
@@ -67,12 +55,11 @@ function ajout($ligne)
 
 
 </section>
-
 <section id="product1" class="section-p1">
     <div class="pro-container">
         <?php foreach ($articles as $article): ?>
-            <div class="pro" onclick="window.location.href='sproduct2.php';">
-                <form method="post" action="shop.php">
+            <div class="pro">
+                <form method="post" action="add_to_cart.php">
                     <img src="<?php echo $article['image']; ?>" alt="">
                     <div class="des">
                         <span>Sport Homme</span>
@@ -86,7 +73,9 @@ function ajout($ligne)
                         </div>
                         <h4 style="border: none; background: none; padding: 0; margin: 0;"><?php echo $article['prix']; ?>€</h4>
                     </div>
-                    <a href="" <?php ajout($article['id']) ?>><i class="fal fa-shopping-cart cart"></i></a>
+                    <input type="hidden" name="nom" value="<?php echo $article['nom']; ?>">
+                    <input type="hidden" name="prix" value="<?php echo $article['prix']; ?>">
+                    <button type="submit"><i class="fal fa-shopping-cart cart"></i></button>
                 </form>
             </div>
         <?php endforeach; ?>

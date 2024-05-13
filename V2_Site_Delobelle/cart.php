@@ -1,9 +1,11 @@
 <?php
-session_start();
+global $connexion;
+include('config/db.php');
 
-$cart = $_SESSION['add_cart'];
+$sql = "SELECT * FROM Panier";
+$result = $connexion->query($sql);
 
-
+$total = 0;
 ?>
 
 
@@ -61,16 +63,16 @@ $cart = $_SESSION['add_cart'];
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($_SESSION['add_cart'] as $item) : ?>
+        <?php while ($item = $result->fetch_assoc()): ?>
             <tr>
-                <td><a href="#">Supprimer</a></td>
-                <td><img src="<?php echo isset($item[3]) ? $item[3] : ''; ?>" alt=""></td>
-                <td><?php echo isset($item[1]) ? $item[1] : ''; ?></td>
-                <td><?php echo isset($item[2]) ? $item[2] . '€' : ''; ?></td>
-                <td><?php echo isset($item[4]) ? $item[4] : ''; ?></td>
-                <td><?php echo isset($item[2]) && isset($item[4]) ? $item[2] * $item[4] . '€' : ''; ?></td>
+                <td><a href="remove_from_cart.php?nom=<?php echo $item['nom']; ?>">Supprimer</a></td>
+                <td><?php echo $item['nom']; ?></td>
+                <td><?php echo $item['prix']; ?>€</td>
+                <td><?php echo $item['quantite']; ?></td>
+                <td><?php echo $item['prix'] * $item['quantite']; ?>€</td>
             </tr>
-        <?php endforeach; ?>
+            <?php $total += $item['prix'] * $item['quantite']; ?>
+        <?php endwhile; ?>
 
 
         </tbody>
@@ -78,20 +80,12 @@ $cart = $_SESSION['add_cart'];
 </section>
 
 <section id="cart-add" class="section-p1">
-    <div id="cuopon">
-        <h3>Appliquer le Coupon</h3>
-        <div>
-            <input type="text" name="" id="" placeholder="Entrez Votre Coupon">
-            <button class="normal">Appliquer</button>
-        </div>
-    </div>
-
     <div id="subtotal">
         <h3>Totaux du Panier</h3>
         <table>
             <tr>
                 <td>Sous-total du Panier</td>
-                <td>500€</td>
+                <td><?php echo $total; ?>€</td>
             </tr>
             <tr>
                 <td>Expédition</td>
@@ -99,7 +93,7 @@ $cart = $_SESSION['add_cart'];
             </tr>
             <tr>
                 <td><strong>Total</strong></td>
-                <td><strong>500€</strong></td>
+                <td><strong><?php echo $total; ?>€</strong></td>
             </tr>
         </table>
         <button class="normal">Procéder au paiement</button>
