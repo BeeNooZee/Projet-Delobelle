@@ -55,7 +55,6 @@ $total = 0;
         <thead>
         <tr>
             <td>Supprimer</td>
-            <td>Image</td>
             <td>Produit</td>
             <td>Prix</td>
             <td>Quantité</td>
