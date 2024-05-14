@@ -32,7 +32,7 @@
     </div>
 </section>
 
-<section id="hero"></section>
+<section id="hero">
 
 
 <div class="insform"

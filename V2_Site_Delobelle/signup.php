@@ -48,7 +48,7 @@
         <br>
         <input type="submit" value="Sign Up">
     </form>
-
+</section>
 
     <div>
 
